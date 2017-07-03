@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CommandLine;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +12,15 @@ namespace IRsys_ReportSystem_1
     {
         static void Main(string[] args)
         {
+            Options option = new Options();
+            Parser.Default.ParseArguments<Options>(args).
+                MapResult((Options opt) =>
+                {
+                    option = opt;
+                    return 0;
+                },
+                err => 1);
+
             int numOfDocument = 1000;
 
             List<int> correctDocument = new List<int>
@@ -18,7 +29,7 @@ namespace IRsys_ReportSystem_1
                 568, 572, 633, 740, 819, 861, 899, 906, 916, 953
             };
 
-            List<int> anserSet = new List<int>
+            List<int> answerSet = new List<int>
             {
                 328, 823, 150, 305, 601,
                 794, 682, 765, 819, 223,
@@ -32,7 +43,25 @@ namespace IRsys_ReportSystem_1
                 572, 801, 531,  81, 633
             };
 
+            List<PresitionRecall> presitionRecall = Statistics.GetCompletedPresitionRecalls(correctDocument, answerSet).ToList();
 
+            string outString = string.Empty;
+            using (StreamWriter writer = option.OutTo == null ? new StreamWriter(Console.OpenStandardOutput()) : new StreamWriter(option.OutTo))
+            {
+                if (option.IsCsvFormat)
+                {
+                    writer.WriteLine("Presition,Recall");
+                }
+                foreach(PresitionRecall pr in presitionRecall)
+                {
+                    writer.WriteLine(pr.ToString(option.IsCsvFormat));
+                }
+            }
+
+            Console.WriteLine("11点平均適合率 : {0}", Statistics.Get11PointAveragePrecision(presitionRecall));
+            Console.WriteLine("平均適合率 : {0}", Statistics.GetAveragePrecision(presitionRecall, correctDocument.Count()));
+
+            return;
         }
     }
 }

@@ -1,0 +1,11 @@
+C:\src\IRsys-ReportSystem-1\IRsys-ReportSystem-1\bin\Release\IRsys-ReportSystem-1.exe.config
+C:\src\IRsys-ReportSystem-1\IRsys-ReportSystem-1\bin\Release\IRsys-ReportSystem-1.exe
+C:\src\IRsys-ReportSystem-1\IRsys-ReportSystem-1\bin\Release\IRsys-ReportSystem-1.pdb
+C:\src\IRsys-ReportSystem-1\IRsys-ReportSystem-1\bin\Release\CommandLine.dll
+C:\src\IRsys-ReportSystem-1\IRsys-ReportSystem-1\bin\Release\FSharp.Core.dll
+C:\src\IRsys-ReportSystem-1\IRsys-ReportSystem-1\bin\Release\CommandLine.xml
+C:\src\IRsys-ReportSystem-1\IRsys-ReportSystem-1\bin\Release\FSharp.Core.xml
+C:\src\IRsys-ReportSystem-1\IRsys-ReportSystem-1\bin\Release\ja\FSharp.Core.resources.dll
+C:\src\IRsys-ReportSystem-1\IRsys-ReportSystem-1\obj\Release\IRsys-ReportSystem-1.exe
+C:\src\IRsys-ReportSystem-1\IRsys-ReportSystem-1\obj\Release\IRsys-ReportSystem-1.pdb
+C:\src\IRsys-ReportSystem-1\IRsys-ReportSystem-1\obj\Release\IRsys-ReportSystem-1.csprojResolveAssemblyReference.cache
